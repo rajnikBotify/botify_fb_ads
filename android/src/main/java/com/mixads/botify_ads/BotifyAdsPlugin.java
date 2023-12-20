@@ -2,6 +2,7 @@ package com.mixads.botify_ads;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -44,7 +45,6 @@ public class BotifyAdsPlugin implements FlutterPlugin, MethodCallHandler, Activi
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-
         if (call.method.equals(FacebookConstants.INIT_METHOD))
             result.success(init((HashMap) call.arguments));
         else result.notImplemented();
@@ -55,6 +55,11 @@ public class BotifyAdsPlugin implements FlutterPlugin, MethodCallHandler, Activi
         AudienceNetworkAds.initialize(_activity.getApplicationContext());
         if (testingId != null) {
             AdSettings.addTestDevice(testingId);
+        }
+        final Boolean isTesting = (Boolean) initValues.get("isTesting");
+        Log.e("isTesting",""+isTesting);
+        if (Boolean.TRUE.equals(isTesting)){
+            Log.e("isTesting","-----------------------");
             AdSettings.turnOnSDKDebugger(_activity.getApplicationContext());
             AdSettings.setTestMode(true);
             AdSettings.setIntegrationErrorMode(AdSettings.IntegrationErrorMode.INTEGRATION_ERROR_CRASH_DEBUG_MODE);
