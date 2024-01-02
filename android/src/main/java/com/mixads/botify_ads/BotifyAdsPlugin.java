@@ -19,7 +19,6 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 
-
 public class BotifyAdsPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
     private MethodChannel channel, interstitialAdChannel, rewardedAdChannel;
     private Activity _activity;
@@ -55,9 +54,9 @@ public class BotifyAdsPlugin implements FlutterPlugin, MethodCallHandler, Activi
         AudienceNetworkAds.initialize(_activity.getApplicationContext());
         if (testingId != null) {
             AdSettings.addTestDevice(testingId);
-            AdSettings.turnOnSDKDebugger(_activity.getApplicationContext());
-            AdSettings.setTestMode(true);
-            AdSettings.setIntegrationErrorMode(AdSettings.IntegrationErrorMode.INTEGRATION_ERROR_CRASH_DEBUG_MODE);
+//            AdSettings.turnOnSDKDebugger(_activity.getApplicationContext());
+//            AdSettings.setTestMode(true);
+//            AdSettings.setIntegrationErrorMode(AdSettings.IntegrationErrorMode.INTEGRATION_ERROR_CRASH_DEBUG_MODE);
         }
         return true;
     }
