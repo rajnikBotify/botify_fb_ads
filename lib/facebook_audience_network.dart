@@ -21,10 +21,9 @@ class FacebookAudienceNetwork {
   static const _channel = MethodChannel(MAIN_CHANNEL);
 
   static Future<bool?> init(
-      {String? testingId,bool isTesting = false, bool iOSAdvertiserTrackingEnabled = false}) async {
+      {String? testingId, bool iOSAdvertiserTrackingEnabled = false}) async {
     Map<String, String?> initValues = {
       "testingId": testingId,
-      "isTesting": isTesting.toString(),
       "iOSAdvertiserTrackingEnabled": iOSAdvertiserTrackingEnabled.toString(),
     };
 

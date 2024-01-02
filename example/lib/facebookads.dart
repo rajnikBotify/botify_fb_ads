@@ -1,3 +1,4 @@
+import 'package:botify_ads/ad/ad_native_loader.dart';
 import 'package:botify_ads/facebook_audience_network.dart';
 import 'package:flutter/material.dart';
 
@@ -19,8 +20,8 @@ class _MyFaceBookAdsState extends State<MyFaceBookAds> {
   void initState() {
     super.initState();
     FacebookAudienceNetwork.init(
-      isTesting: true,
-      testingId: "16aba1a4-f8bb-4f5e-933b-5a7ed99ebf58",
+      // isTesting: true,
+      testingId: "bfa621df-0355-4568-8331-4b1a1c30c3c8",
       iOSAdvertiserTrackingEnabled: true,
     );
   }
@@ -132,82 +133,82 @@ class _MyFaceBookAdsState extends State<MyFaceBookAds> {
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                color: Colors.grey,
-                child: FacebookBannerAd(
-                  placementId: bannerID,
-                  bannerSize: BannerSize.STANDARD,
-                  listener: (result, value) {
-                    print("Banner Ad: $result -->  $value");
-                  },
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              MyNativeAd(
-                placementId: nativeID,
-                adType: MyNativeAdType.NATIVE_AD_FULL_SCREEN,
-                width: double.infinity,
-                height: 500,
-                backgroundColor: Colors.white,
-                titleColor: Colors.amber,
-                titleTextSize: 15,
-                bodyTextSize: 12,
-                socialLabelTextSize: 12,
-                sponsoredLabelTextSize: 12,
-                adCallButtonTextSize: 14,
-                descriptionColor: Colors.brown,
-                buttonColor: Colors.lightGreen,
-                buttonTitleColor: Colors.teal,
-                listener: (result, value) {
-                  print("Native Ad: $result --> $value");
-                },
-                keepExpandedWhileLoading: true,
-                expandAnimationDuraion: 1000,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                height: 100,
-                color: Colors.grey,
-                child: Center(
-                  child: MyNativeAd(
-                    placementId: nativeID,
-                    adType: MyNativeAdType.NATIVE_AD_SMALL,
-                    width: double.infinity,
-                    height: 100,
-                    backgroundColor: Colors.white,
-                    titleColor: Colors.amber,
-                    titleTextSize: 15,
-                    bodyTextSize: 12,
-                    socialLabelTextSize: 12,
-                    sponsoredLabelTextSize: 12,
-                    adCallButtonTextSize: 14,
-                    descriptionColor: Colors.brown,
-                    buttonColor: Colors.lightGreen,
-                    buttonTitleColor: Colors.teal,
-                    listener: (result, value) {
-                      print("Native Ad: $result --> $value");
-                    },
-                    keepExpandedWhileLoading: true,
-                    expandAnimationDuraion: 1000,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
+              // Container(
+              //   color: Colors.grey,
+              //   child: FacebookBannerAd(
+              //     placementId: bannerID,
+              //     bannerSize: BannerSize.STANDARD,
+              //     listener: (result, value) {
+              //       print("Banner Ad: $result -->  $value");
+              //     },
+              //   ),
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // MyNativeAd(
+              //   placementId: nativeID,
+              //   adType: MyNativeAdType.NATIVE_AD_FULL_SCREEN,
+              //   width: double.infinity,
+              //   height: 500,
+              //   backgroundColor: Colors.white,
+              //   titleColor: Colors.amber,
+              //   titleTextSize: 15,
+              //   bodyTextSize: 12,
+              //   socialLabelTextSize: 12,
+              //   sponsoredLabelTextSize: 12,
+              //   adCallButtonTextSize: 14,
+              //   descriptionColor: Colors.brown,
+              //   buttonColor: Colors.lightGreen,
+              //   buttonTitleColor: Colors.teal,
+              //   listener: (result, value) {
+              //     print("Native Ad: $result --> $value");
+              //   },
+              //   keepExpandedWhileLoading: true,
+              //   expandAnimationDuraion: 1000,
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // Container(
+              //   height: 100,
+              //   color: Colors.grey,
+              //   child: Center(
+              //     child: MyNativeAd(
+              //       placementId: nativeID,
+              //       adType: MyNativeAdType.NATIVE_AD_SMALL,
+              //       width: double.infinity,
+              //       height: 100,
+              //       backgroundColor: Colors.white,
+              //       titleColor: Colors.amber,
+              //       titleTextSize: 15,
+              //       bodyTextSize: 12,
+              //       socialLabelTextSize: 12,
+              //       sponsoredLabelTextSize: 12,
+              //       adCallButtonTextSize: 14,
+              //       descriptionColor: Colors.brown,
+              //       buttonColor: Colors.lightGreen,
+              //       buttonTitleColor: Colors.teal,
+              //       listener: (result, value) {
+              //         print("Native Ad: $result --> $value");
+              //       },
+              //       keepExpandedWhileLoading: true,
+              //       expandAnimationDuraion: 1000,
+              //     ),
+              //   ),
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
               MyNativeAd(
                 placementId: nativeID,
                 adType: MyNativeAdType.NATIVE_AD_BIG,
@@ -235,43 +236,69 @@ class _MyFaceBookAdsState extends State<MyFaceBookAds> {
               const SizedBox(
                 height: 10,
               ),
-              Row(
-                children: [
-                  Expanded(
-                      flex: 1,
-                      child: Container(
-                        height: 250,
-                        color: Colors.grey,
-                        child: MyNativeAd(
-                          placementId: nativeID,
-                          adType: MyNativeAdType.NATIVE_AD_BIG_ROW,
-                          width: double.infinity,
-                          height: 250,
-                          backgroundColor: Colors.deepOrange,
-                          titleColor: Colors.amber,
-                          titleTextSize: 15,
-                          bodyTextSize: 10,
-                          socialLabelTextSize: 10,
-                          sponsoredLabelTextSize: 10,
-                          adCallButtonTextSize: 14,
-                          descriptionColor: Colors.brown,
-                          buttonColor: Colors.lightGreen,
-                          buttonTitleColor: Colors.teal,
-                          listener: (result, value) {
-                            print("Native Ad: $result --> $value");
-                          },
-                          keepExpandedWhileLoading: true,
-                          expandAnimationDuraion: 1000,
-                        ),
-                      )),
-                  Expanded(
-                      flex: 1,
-                      child: Container(
-                        height: 250,
-                        color: Colors.blueGrey,
-                      ))
-                ],
-              )
+              const SizedBox(
+                height: 10,
+              ), const SizedBox(
+                height: 10,
+              ),
+              FacebookNativeAd(
+                placementId: nativeID,
+                adType: FacebookNativeAdType.NATIVE_AD_BIG,
+                width: double.infinity,
+                height: 250,
+                backgroundColor: Colors.deepOrange,
+                titleColor: Colors.amber,
+                descriptionColor: Colors.brown,
+                buttonColor: Colors.lightGreen,
+                buttonTitleColor: Colors.teal,
+                titleTextSize: 15,
+                bodyTextSize: 12,
+                socialLabelTextSize: 12,
+                sponsoredLabelTextSize: 12,
+                adCallButtonTextSize: 14,
+                listener: (result, value) {
+                  print("Native Ad: $result --> $value");
+                },
+                keepExpandedWhileLoading: true,
+                expandAnimationDuraion: 1000,
+              ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //         flex: 1,
+              //         child: Container(
+              //           height: 250,
+              //           color: Colors.grey,
+              //           child: MyNativeAd(
+              //             placementId: nativeID,
+              //             adType: MyNativeAdType.NATIVE_AD_BIG_ROW,
+              //             width: double.infinity,
+              //             height: 250,
+              //             backgroundColor: Colors.deepOrange,
+              //             titleColor: Colors.amber,
+              //             titleTextSize: 15,
+              //             bodyTextSize: 10,
+              //             socialLabelTextSize: 10,
+              //             sponsoredLabelTextSize: 10,
+              //             adCallButtonTextSize: 14,
+              //             descriptionColor: Colors.brown,
+              //             buttonColor: Colors.lightGreen,
+              //             buttonTitleColor: Colors.teal,
+              //             listener: (result, value) {
+              //               print("Native Ad: $result --> $value");
+              //             },
+              //             keepExpandedWhileLoading: true,
+              //             expandAnimationDuraion: 1000,
+              //           ),
+              //         )),
+              //     Expanded(
+              //         flex: 1,
+              //         child: Container(
+              //           height: 250,
+              //           color: Colors.blueGrey,
+              //         ))
+              //   ],
+              // )
             ],
           ),
         ),

@@ -53,13 +53,8 @@ public class BotifyAdsPlugin implements FlutterPlugin, MethodCallHandler, Activi
     private boolean init(HashMap initValues) {
         final String testingId = (String) initValues.get("testingId");
         AudienceNetworkAds.initialize(_activity.getApplicationContext());
-        if (testingId != null) {
+        if (testingId != null) {ō
             AdSettings.addTestDevice(testingId);
-        }
-        final Boolean isTesting = (Boolean) initValues.get("isTesting");
-        Log.e("isTesting",""+isTesting);
-        if (Boolean.TRUE.equals(isTesting)){
-            Log.e("isTesting","-----------------------");
             AdSettings.turnOnSDKDebugger(_activity.getApplicationContext());
             AdSettings.setTestMode(true);
             AdSettings.setIntegrationErrorMode(AdSettings.IntegrationErrorMode.INTEGRATION_ERROR_CRASH_DEBUG_MODE);
