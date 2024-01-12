@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 class BannerSize {
   final int width;
   final int height;
@@ -17,10 +16,10 @@ class BannerSize {
 }
 
 enum BannerAdResult {
-   ERROR,
-   LOADED,
-   CLICKED,
-   LOGGING_IMPRESSION,
+  ERROR,
+  LOADED,
+  CLICKED,
+  LOGGING_IMPRESSION,
 }
 
 class FacebookBannerAd extends StatefulWidget {
@@ -68,7 +67,7 @@ class _FacebookBannerAdState extends State<FacebookBannerAd>
             "width": widget.bannerSize.width,
             "height": widget.bannerSize.height,
           },
-          creationParamsCodec: StandardMessageCodec(),
+          creationParamsCodec: const StandardMessageCodec(),
         ),
       );
     } else {
