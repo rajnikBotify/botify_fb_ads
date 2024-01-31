@@ -1,9 +1,3 @@
-/// Facebook Audience Network plugin for Flutter applications.
-///
-/// This library uses native API of [Facebook Audience Network](https://developers.facebook.com/docs/audience-network)
-/// to provide functionality for Flutter applications.
-///
-/// Currently only Android platform is supported.
 library facebook_audience_network;
 
 import 'package:flutter/services.dart';
