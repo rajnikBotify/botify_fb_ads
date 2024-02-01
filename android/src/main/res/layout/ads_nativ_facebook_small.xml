@@ -6,7 +6,6 @@
     android:gravity="center"
     android:orientation="horizontal">
 
-
     <com.facebook.ads.MediaView
         android:id="@+id/native_ad_icon"
         android:layout_width="90dp"
@@ -33,11 +32,11 @@
             android:layout_above="@+id/native_ad_sponsored_label"
             android:layout_centerHorizontal="true"
             android:ellipsize="end"
-            android:paddingLeft="3sp"
-            android:paddingRight="3sp"
             android:includeFontPadding="false"
             android:lineSpacingExtra="0dp"
-            android:lines="1" />
+            android:lines="1"
+            android:paddingLeft="3sp"
+            android:paddingRight="3sp" />
 
 
         <TextView
@@ -88,8 +87,5 @@
                 android:gravity="center"
                 android:lines="1" />
         </RelativeLayout>
-
-
     </RelativeLayout>
-
 </LinearLayout>

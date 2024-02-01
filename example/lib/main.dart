@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
 
 class AdsMainPage extends StatefulWidget {
   const AdsMainPage({super.key});
-
   _MyAppState createState() => _MyAppState();
 }
 
@@ -28,7 +27,7 @@ class _MyAppState extends State<AdsMainPage> {
   void initState() {
     super.initState();
     FacebookAudienceNetwork.init(
-      testingId: "16aba1a4-f8bb-4f5e-933b-5a7ed99ebf58",
+      testingId: "276aba52-fa0c-4bac-b069-12adcd2f9681",
       iOSAdvertiserTrackingEnabled: true,
     );
   }

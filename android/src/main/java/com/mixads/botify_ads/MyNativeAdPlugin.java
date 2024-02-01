@@ -222,7 +222,6 @@ class MyNativeAdView implements PlatformView {
 
         LinearLayout linViewBG = adView.findViewById(R.id.linViewBG);
 
-
         MediaView nativeAdIcon = adView.findViewById(R.id.native_ad_icon);
         TextView nativeAdTitle = adView.findViewById(R.id.native_ad_title);
         TextView sponsoredLabel = adView.findViewById(R.id.native_ad_sponsored_label);
